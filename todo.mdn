@@ -1,0 +1,26 @@
+- finish codefast
+- turn skilltree renderer into a component
+
+dashboard -> shadcn
+- profile 
+    - add area of life (radar chart to show progress)
+    - time spent for each area of life (week/daily) -> (pie shart)
+- add the progress on each goal for each area of life (progress bar)
+    - show the projects within that goal (boards)
+    
+
+
+skilltree
+- data render to skilltree
+- locally save data
+- create skill tree by generating it with ai 
+    - what do you want to solve, build, or learn?
+        - project/problem/skill
+    - what do you want to achieve?
+    - when do you want to achieve it?
+
+- a left and right side bar -> uishadcn
+
+
+reviews
+- loved by builders
