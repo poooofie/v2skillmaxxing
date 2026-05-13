@@ -2,10 +2,11 @@ import ButtonLogin from "@/components/ButtonLogin"
 import FAQListItem from "@/components/FAQListItem";
 import Image from "next/image";
 import productDemo from "@/public/assets/productDemo.jpeg"
+import { auth } from "@/auth";
 
-export default function Home() {
-  const isLoggedIn = false;
-  const name = "Bob"
+export default async function Home() {
+  const session = await auth();
+  
 
   return (
     <main>
@@ -19,7 +20,7 @@ export default function Home() {
             <a className="link link-hover" href="#faq">FAQ</a>
           </div>
           <div>
-            <ButtonLogin isLoggedIn={isLoggedIn} name={name}/>
+            <ButtonLogin session={session}/>
           </div>
         </div>
       </section>
@@ -34,7 +35,7 @@ export default function Home() {
           <div className="opacity-90 mb-10">
             Create your own learning path by pursuing your curiosity
           </div>
-          <ButtonLogin isLoggedIn={isLoggedIn} name={name}/>
+          <ButtonLogin session={session}/>
         </div>
 
       </section>
@@ -104,8 +105,7 @@ export default function Home() {
             </ul>
 
             <ButtonLogin 
-            isLoggedIn={isLoggedIn} 
-            name={name} 
+            session={session}
             extraStyle="w-full" />
           </div>
           

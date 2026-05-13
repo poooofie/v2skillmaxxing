@@ -1,13 +1,11 @@
-
+import ButtonLogout from "@/components/ButtonLogout";
 
 export default function Home() {
     return (
         <main>
-            <h1>Hey (name)</h1>
-            <div>
-                Skill Window
-            </div>
+            <h1>Dashboard</h1>
 
+            <ButtonLogout />
         </main>
     );
 }
