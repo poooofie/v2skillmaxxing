@@ -9,7 +9,7 @@ const FAQListItem = ( {qa} ) => {
     return (
         <li key={qa.question}>
             {/* question (clickable) */}
-            <button className="py-5 font-semibold border-b w-full text-left flex items-center justify-between" 
+            <button className="py-5 font-semibold border-b border-[#5EF6FF]/20 w-full text-left flex items-center justify-between text-white hover:text-[#5EF6FF] transition-colors" 
             onClick={() => setIsOpen(!isOpen)}
             >
                 <p>{qa.question}</p>
@@ -33,7 +33,7 @@ const FAQListItem = ( {qa} ) => {
             </button>
 
             {/* Answer */}
-            <div className={`${isOpen ? "block" : "hidden"} mt-3 mb-6 opacity-90`}>{qa.answer}</div>
+            <div className={`${isOpen ? "block" : "hidden"} mt-3 mb-6 text-white/60`}>{qa.answer}</div>
         </li>
     )
 }

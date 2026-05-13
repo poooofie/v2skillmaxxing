@@ -160,11 +160,11 @@ Rules:
     // Step 1: Generating
     if (step === 1) {
         return (
-            <div className="bg-base-100 p-8 rounded-3xl flex flex-col items-center justify-center gap-6 min-h-64">
-                <span className="loading loading-spinner loading-lg text-primary" />
+            <div className="bg-[#5EF6FF]/5 border border-[#5EF6FF]/20 p-8 rounded-2xl flex flex-col items-center justify-center gap-6 min-h-64">
+                <span className="loading loading-spinner loading-lg text-[#5EF6FF]" />
                 <div className="text-center">
-                    <p className="font-bold text-lg">Building your learning tree…</p>
-                    <p className="text-base-content/50 text-sm mt-1">
+                    <p className="font-bold text-lg text-white">Building your learning tree...</p>
+                    <p className="text-white/50 text-sm mt-1">
                         Turning your goal into a skill tree
                     </p>
                 </div>
@@ -175,44 +175,44 @@ Rules:
     // Step 2: Preview
     if (step === 2 && generated) {
         return (
-            <div className="bg-base-100 p-8 rounded-3xl flex flex-col gap-6">
+            <div className="bg-[#5EF6FF]/5 border border-[#5EF6FF]/20 p-8 rounded-2xl flex flex-col gap-6">
                 <div className="flex items-start justify-between gap-4">
                     <div>
-                        <p className="font-bold text-lg">{generated.title}</p>
-                        <p className="text-base-content/60 text-sm mt-1 max-w-lg">
+                        <p className="font-bold text-lg text-white">{generated.title}</p>
+                        <p className="text-white/60 text-sm mt-1 max-w-lg">
                             {generated.description}
                         </p>
                     </div>
-                    <span className="badge badge-outline badge-sm shrink-0 mt-1">
+                    <span className="px-2.5 py-1 rounded-lg border border-[#5EF6FF]/40 bg-[#5EF6FF]/10 text-[#5EF6FF] text-xs shrink-0 mt-1">
                         {generated.skillArea}
                     </span>
                 </div>
 
-                <div className="divider my-0" />
+                <div className="border-t border-[#5EF6FF]/20" />
 
                 {error && (
-                    <div role="alert" className="alert alert-error alert-soft text-sm">
+                    <div role="alert" className="rounded-lg border border-red-500/40 bg-red-500/10 p-3 text-sm text-red-200">
                         {error}
                     </div>
                 )}
 
                 <div className="flex flex-col gap-3">
-                    <p className="text-xs font-semibold text-base-content/40 uppercase tracking-widest">
+                    <p className="text-xs font-semibold text-white/40 uppercase tracking-widest">
                         {generated.nodes.length} topics generated
                     </p>
                     <div className="flex flex-col gap-2">
                         {generated.nodes.map((node, i) => (
                             <div
                                 key={node.id}
-                                className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl bg-base-200"
+                                className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl bg-[#000000] border border-[#5EF6FF]/15"
                             >
                                 <div className="flex items-center gap-3 min-w-0">
-                                    <span className="text-xs text-base-content/30 w-5 shrink-0">
+                                    <span className="text-xs text-white/30 w-5 shrink-0">
                                         {String(i + 1).padStart(2, "0")}
                                     </span>
                                     <div className="min-w-0">
-                                        <p className="text-sm font-medium truncate">{node.name}</p>
-                                        <p className="text-xs text-base-content/40 mt-0.5">
+                                        <p className="text-sm font-medium truncate text-white">{node.name}</p>
+                                        <p className="text-xs text-white/40 mt-0.5">
                                             {node.children.length} subtopics · {node.area}
                                         </p>
                                     </div>
@@ -235,7 +235,7 @@ Rules:
 
                 <div className="flex gap-3 pt-2">
                     <button
-                        className="btn btn-primary flex-1"
+                        className="btn flex-1 border-[#5EF6FF] bg-[#5EF6FF] text-black hover:border-[#5EF6FF] hover:bg-[#5EF6FF]/80"
                         onClick={handleSave}
                         disabled={isSaving}
                     >
@@ -246,7 +246,7 @@ Rules:
                         )}
                     </button>
                     <button
-                        className="btn btn-ghost"
+                        className="btn border-[#5EF6FF]/30 bg-transparent text-white/70 hover:border-[#5EF6FF]/60 hover:bg-[#5EF6FF]/10 hover:text-white"
                         onClick={handleReset}
                         disabled={isSaving}
                     >
@@ -259,23 +259,23 @@ Rules:
 
     // Step 0: Form
     return (
-        <div className="bg-base-100 p-8 rounded-3xl flex flex-col gap-6">
+        <div className="bg-[#5EF6FF]/5 border border-[#5EF6FF]/20 p-8 rounded-2xl flex flex-col gap-6">
             <div>
-                <p className="font-bold text-lg">Create a new learning tree</p>
-                <p className="text-base-content/50 text-sm mt-1">
+                <p className="font-bold text-lg text-white">Create a new learning tree</p>
+                <p className="text-white/50 text-sm mt-1">
                     Build your learning path in 5 secs
                 </p>
             </div>
 
             {error && (
-                <div role="alert" className="alert alert-error alert-soft text-sm">
+                <div role="alert" className="rounded-lg border border-red-500/40 bg-red-500/10 p-3 text-sm text-red-200">
                     {error}
                 </div>
             )}
 
             {/* Skill area pills */}
             <fieldset className="fieldset gap-2">
-                <legend className="fieldset-legend">Skill area</legend>
+                <legend className="fieldset-legend text-white/70">Skill area</legend>
                 <div className="flex gap-2 flex-wrap">
                     {SKILL_AREAS.map((area) => (
                         <label key={area} className="cursor-pointer">
@@ -288,10 +288,10 @@ Rules:
                                 onChange={() => setSkillArea(area)}
                             />
                             <span
-                                className={`badge badge-lg transition-all ${
+                                className={`inline-flex min-h-8 items-center rounded-lg border px-3 text-sm transition-all ${
                                     skillArea === area
-                                        ? "badge-primary"
-                                        : "badge-ghost opacity-60 hover:opacity-100"
+                                        ? "border-[#5EF6FF] bg-[#5EF6FF] text-black"
+                                        : "border-[#5EF6FF]/25 bg-[#5EF6FF]/5 text-white/60 hover:border-[#5EF6FF]/50 hover:text-white"
                                 }`}
                             >
                                 {area}
@@ -304,10 +304,10 @@ Rules:
             {/* SMART fields */}
             {LEARNINGTREE_FIELDS.map((field) => (
                 <fieldset key={field.key} className="fieldset gap-1">
-                    <legend className="fieldset-legend">{field.label}</legend>
+                    <legend className="fieldset-legend text-white/70">{field.label}</legend>
                     <input
                         type="text"
-                        className="input w-full"
+                        className="input w-full border-[#5EF6FF]/25 bg-[#000000] text-white placeholder:text-white/30 focus:border-[#5EF6FF] focus:outline-none"
                         placeholder={field.placeholder}
                         value={smart[field.key]}
                         onChange={(e) => handleSmartChange(field.key, e.target.value)}
@@ -317,7 +317,7 @@ Rules:
 
             {/* Submit */}
             <button
-                className="btn btn-primary w-full mt-2"
+                className="btn w-full mt-2 border-[#5EF6FF] bg-[#5EF6FF] text-black hover:border-[#5EF6FF] hover:bg-[#5EF6FF]/80 disabled:border-[#5EF6FF]/20 disabled:bg-[#5EF6FF]/10 disabled:text-white/30"
                 disabled={!allFilled}
                 onClick={handleGenerate}
             >

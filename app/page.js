@@ -9,15 +9,15 @@ export default async function Home() {
   
 
   return (
-    <main>
+    <main className="bg-[#000000] text-white">
       {/* header */}
-      <section className="bg-base-200">
+      <section className="border-b border-[#5EF6FF]/20 bg-[#000000]">
         <div className="flex justify-between items-center px-8 py-2 max-w-5xl mx-auto">
-          <div className="font-bold">skillmaxxing.io</div>
+          <div className="font-bold text-white">skillmaxxing.io</div>
           <div className="space-x-4 max-md:hidden">
-            <a className="link link-hover" href="#feature">Feature</a>
-            <a className="link link-hover" href="#pricing">Pricing</a>
-            <a className="link link-hover" href="#faq">FAQ</a>
+            <a className="text-white/60 hover:text-[#5EF6FF] transition-colors" href="#feature">Feature</a>
+            <a className="text-white/60 hover:text-[#5EF6FF] transition-colors" href="#pricing">Pricing</a>
+            <a className="text-white/60 hover:text-[#5EF6FF] transition-colors" href="#faq">FAQ</a>
           </div>
           <div>
             <ButtonLogin session={session}/>
@@ -26,13 +26,13 @@ export default async function Home() {
       </section>
 
     {/* hero */}
-      <section className="bg-base-100 lg:text-left px-8 text-center py-32 max-w-5xl mx-auto flex flex-col lg:flex-row gap-14 items-center lg=items-start">
-        <Image src={productDemo} alt="Product Demo" className="w-96 rounded-xl"/>
+      <section className="lg:text-left px-8 text-center py-24 max-w-5xl mx-auto flex flex-col lg:flex-row gap-14 items-center lg:items-start">
+        <Image src={productDemo} alt="Product Demo" className="w-96 rounded-2xl border border-[#5EF6FF]/25 shadow-[0_0_30px_rgba(94,246,255,0.15)]"/>
         <div>
-          <h1 className="text-3xl lg:text-5l font-extrabold mb-6">
+          <h1 className="text-3xl lg:text-5xl font-extrabold mb-6 text-white">
             Maximize your skill stats in real life
           </h1>
-          <div className="opacity-90 mb-10">
+          <div className="text-white/60 mb-10">
             Create your own learning path by pursuing your curiosity
           </div>
           <ButtonLogin session={session}/>
@@ -41,37 +41,37 @@ export default async function Home() {
       </section>
 
     {/* feature */}
-      <section className="bg-base-200" id="feature">
+      <section className="border-t border-[#5EF6FF]/10 bg-[#5EF6FF]/5" id="feature">
         <div className="py-32 px-8 max-w-3xl mx-auto">
-          <p className="text-sm uppercase font-medium text-center text-primary mb-4">
+          <p className="text-sm uppercase font-medium text-center text-[#5EF6FF] mb-4">
             Features</p>
 
-          <h2 className="text-3xl lg:text-4xl font-extrabold mb-2 text-center">
+          <h2 className="text-3xl lg:text-4xl font-extrabold mb-2 text-center text-white">
             Turn learning into an RPG.
           </h2>
-          <h3 className="mb-12">Optional add-on services make it easy to track your 
+          <h3 className="mb-12 text-center text-white/60">Optional add-on services make it easy to track your 
             learning and showcase your portfolio.</h3>
           </div>
       </section>
 
     {/* pricing */}
-      <section className="bg-base-200" id="pricing">
+      <section className="bg-[#000000]" id="pricing">
         <div className="py-32 px-8 max-w-3xl mx-auto">
-          <p className="text-sm uppercase font-medium text-center text-primary mb-4">
+          <p className="text-sm uppercase font-medium text-center text-[#5EF6FF] mb-4">
             Level up without limits</p>
 
-          <h2 className="text-3xl lg:text-4xl font-extrabold mb-2 text-center">
+          <h2 className="text-3xl lg:text-4xl font-extrabold mb-2 text-center text-white">
             No card required. No strings attached.
           </h2>
-          <h3 className="mb-12">Optional add-on services make it easy to track your 
+          <h3 className="mb-12 text-center text-white/60">Optional add-on services make it easy to track your 
             learning and showcase your portfolio.</h3>
 
 
           {/* pricing cards */}
-          <div className="p-8 bg-base-100 w-96 rounded-3xl mx-auto space-y-6">
+          <div className="p-8 bg-[#5EF6FF]/5 border border-[#5EF6FF]/20 w-full max-w-sm rounded-2xl mx-auto space-y-6">
             <div className="flex gap-2 items-baseline">
-              <div className="text-4xl font-black">$0</div>
-              <div className="uppercase text-sm font-medium opacity-60">
+              <div className="text-4xl font-black text-white">$0</div>
+              <div className="uppercase text-sm font-medium text-white/50">
                 Free Forever
               </div>
             </div>
@@ -98,7 +98,7 @@ export default async function Home() {
                         />
                     </svg>
 
-                    {priceItem}
+                    <span className="text-white/70">{priceItem}</span>
                   </li>
                   );
                 })}
@@ -113,11 +113,11 @@ export default async function Home() {
       </section>
 
     {/* FAQ */}
-    <section className="bg-base-200" id="faq">
+    <section className="border-t border-[#5EF6FF]/10 bg-[#5EF6FF]/5" id="faq">
         <div className="py-32 px-8 max-w-3xl mx-auto">
-          <p className="text-sm uppercase font-medium text-center text-primary mb-4">
+          <p className="text-sm uppercase font-medium text-center text-[#5EF6FF] mb-4">
             FAQ</p>
-          <h2 className="text-3xl lg:text-4xl font-extrabold mb-2 text-center">
+          <h2 className="text-3xl lg:text-4xl font-extrabold mb-2 text-center text-white">
             Frequently Asked Questions
           </h2>
 

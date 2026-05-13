@@ -5,12 +5,13 @@ import { signIn } from "next-auth/react";
 
 const ButtonLogin = ({ session, extraStyle }) => {
     const dashboardUrl = "/dashboard";
+    const buttonClass = `btn border-[#5EF6FF] bg-[#5EF6FF] text-black hover:border-[#5EF6FF] hover:bg-[#5EF6FF]/80 ${extraStyle ? extraStyle : ""}`;
     
     if (session) {
         return (
             <Link 
             href={dashboardUrl} 
-            className={`btn btn-primary ${extraStyle ? extraStyle : ""}`}
+            className={buttonClass}
             >
                 Time to level up {session.user.name}
             </Link>
@@ -19,7 +20,7 @@ const ButtonLogin = ({ session, extraStyle }) => {
     
     return (
         <button 
-        className={`btn btn-primary ${extraStyle ? extraStyle : ""}`}
+        className={buttonClass}
         onClick={() => {
             signIn(undefined, { callbackUrl: dashboardUrl });
         }}
